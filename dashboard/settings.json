@@ -7,7 +7,7 @@
         "http": {
           "port": 80
         },
-        "callback": "https://brownies.up.railway.app//callback",
+        "callback": "https://brownies.up.railway.app/callback",
         "clientID": "944520073836650516",
         "secret": "REPLIT VARIABLE TO HIDE IT!!"
     }
