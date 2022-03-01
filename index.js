@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const keepAlive = require("./server");
 const config = require(`./botconfig/config.json`);
 const settings = require(`./botconfig/settings.json`);
 const filters = require(`./botconfig/filters.json`);
