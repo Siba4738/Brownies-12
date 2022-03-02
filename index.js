@@ -22,16 +22,15 @@ const client = new Discord.Client({
         Discord.Intents.FLAGS.GUILD_MESSAGES,
         Discord.Intents.FLAGS.GUILD_VOICE_STATES,
     ],
-    bot.on('ready', () => {
-    bot.user.setStatus('available')
     bot.user.setPresence({
-        game: {
-            name: '+help | Kanki#0001',
-            type: "PLAYING",
-            url: "https://discord.gg/78yXSem6Zg"
-        }
+    status: 'online',
+    activity: {
+        name: 'with depression',
+        type: 'STREAMING',
+        url: 'https://www.twitch.tv/monstercat'
+    }
+})
     });
-});
 });
 //BOT CODED BY: Tomato#6966
 //DO NOT SHARE WITHOUT CREDITS!
