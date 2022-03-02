@@ -326,6 +326,6 @@ module.exports = client => {
     //START THE WEBSITE ON THE DEFAULT PORT (80)
     const http = require(`http`).createServer(app);
     http.listen(8080, () => {
-        console.log(`[${settings.website.domain}]: HTTP-Website running on ${settings.config.http.port} port.`)
+        console.log(`[${settings.website.domain}]: HTTP-Website running on 8080 port.`)
     });
 }
