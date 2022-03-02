@@ -22,15 +22,13 @@ const client = new Discord.Client({
         Discord.Intents.FLAGS.GUILD_MESSAGES,
         Discord.Intents.FLAGS.GUILD_VOICE_STATES,
     ],
-    bot.user.setPresence({
-    status: 'online',
-    activity: {
-        name: 'with depression',
-        type: 'STREAMING',
-        url: 'https://www.twitch.tv/monstercat'
+    presence: {
+      activity: {
+        name: `+help | Kanki#0001`, 
+        type: "PLAYING", 
+      },
+      status: "online"
     }
-})
-    });
 });
 //BOT CODED BY: Tomato#6966
 //DO NOT SHARE WITHOUT CREDITS!
