@@ -1,13 +1,13 @@
 {
     "website" : {
       "support": "https://instagram.com/itzz_siba",
-      "domain": "https://brownies.up.railway.app"
+      "domain": "https://alltimebrownies.tk"
     },
     "config": {
         "http": {
-          "port": 80
+          "port": 8080
         },
-        "callback": "https://brownies.up.railway.app/callback",
+        "callback": "https://alltimebrownies.tk/callback",
         "clientID": "944520073836650516",
         "secret": "REPLIT VARIABLE TO HIDE IT!!"
     }
