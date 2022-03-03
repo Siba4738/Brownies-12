@@ -23,12 +23,21 @@ const client = new Discord.Client({
         Discord.Intents.FLAGS.GUILD_VOICE_STATES,
     ],
     presence: {
-      activity: {
-        name: `+help | Kanki#0001`, 
-        type: "PLAYING", 
-      },
-      status: "online"
-    }
+
+    activity: {
+
+      name: `${config.status.text}`.replace("{prefix}", config.prefix), 
+
+      type: config.status.type, 
+
+      url: config.status.url
+
+    },
+
+    status: "online"
+
+  }
+
 });
 //BOT CODED BY: Tomato#6966
 //DO NOT SHARE WITHOUT CREDITS!
