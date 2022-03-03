@@ -24,19 +24,17 @@ const client = new Discord.Client({
     ],
     presence: {
 
-    activity: {
+      activity: {
 
-      name: `${config.status.text}`.replace("{prefix}", config.prefix), 
+        name: `+help | Kanki#0001`, 
 
-      type: config.status.type, 
+        type: "PLAYING", 
 
-      url: config.status.url
+      },
 
-    },
+      status: "online"
 
-    status: "online"
-
-  }
+    }
 
 });
 //BOT CODED BY: Tomato#6966
