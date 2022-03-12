@@ -55,8 +55,8 @@ if(config.spotify_api.enabled){
 }
 client.distube = new DisTube(client, {
   emitNewSongOnly: false,
-  leaveOnEmpty: true,
-  leaveOnFinish: true,
+  leaveOnEmpty: false,
+  leaveOnFinish: false,
   leaveOnStop: true,
   savePreviousSongs: true,
   emitAddSongWhenCreatingQueue: false,
