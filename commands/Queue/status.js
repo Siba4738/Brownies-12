@@ -16,7 +16,7 @@ module.exports = {
 	usage: "status",
 
 	description: "Shows the Queue Status", //the command description for Slash Command Overview
-	cooldown: 10,
+	cooldown: 2,
 	requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
 	alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
 	run: async (client, message, args) => {
