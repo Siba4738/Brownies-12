@@ -113,7 +113,7 @@ module.exports = {
 						embeds: [new MessageEmbed()
 						  .setColor(ee.color)
 						  .setTimestamp()
-						  .setTitle(`<a:cleared:945737348967186482> **Enabled the __Song__-Loop** <a:djpartys:945543961257332757> ||( ||( <a:music_level:945726294308585484>Disabled the **Song-Loop**)||Disabled the **Queue-Loop**)||`)
+						  .setTitle(`<a:cleared:945737348967186482> **Enabled the __Song__-Loop** <a:djpartys:945543961257332757> ||( ||( <a:music_level:945726294308585484>Disabled the **Queue-Loop**)||`)
 						  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
 						})
 				} else {
