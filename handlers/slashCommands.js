@@ -1,25 +1,7 @@
 const { readdirSync, lstatSync } = require("fs");
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const config = require("../botconfig/config.json");
-const dirSetup = [{
-			"Folder": "Info", "CmdName": "info",
-			"CmdDescription": "Grant specific Information about something!"
-	},{
-			"Folder": "Settings", "CmdName": "settings",
-			"CmdDescription": "Adjust the Settings of the Bot!"
-	},{
-			"Folder": "Music", "CmdName": "music",
-			"CmdDescription": "Playing/Queuing Music"
-	},{
-			"Folder": "Queue", "CmdName": "queue",
-			"CmdDescription": "Queue Commands"
-	},{
-			"Folder": "Song", "CmdName": "song",
-			"CmdDescription": "Song specific Commands"
-	},{     
-		"Folder": "Filter", "CmdName": "filter",
-		"CmdDescription": "Add Filters to your Music"
-	}];
+const dirSetup = config.slashCommandsDirs;
 module.exports = (client) => {
     try {
 		let allCommands = [];
@@ -145,19 +127,16 @@ module.exports = (client) => {
 			if(config.loadSlashsGlobal){
 				client.application.commands.set(allCommands)
 				.then(slashCommandsData => {
-					client.slashCommandsData = slashCommandsData;
 					console.log(`${slashCommandsData.size} slashCommands ${`(With ${slashCommandsData.map(d => d.options).flat().length} Subcommands)`.green} Loaded for all: ${`All possible Guilds`.underline}`.brightGreen); 
 					console.log(`Because u are Using Global Settings, it can take up to 1 hour until the Commands are changed!`.bold.yellow)
-				}).catch((e)=>{});
+				}).catch((e)=>console.log(e));
 			} else {
-				client.guilds.cache.map(g => g).forEach(async (guild) => {
+				client.guilds.cache.map(g => g).forEach((guild) => {
 					try{
-						await guild.commands.set([]).catch((e)=>{});
 						guild.commands.set(allCommands)
 						.then(slashCommandsData => {
-							client.slashCommandsData = slashCommandsData;
 							console.log(`${slashCommandsData.size} slashCommands ${`(With ${slashCommandsData.map(d => d.options).flat().length} Subcommands)`.green} Loaded for: ${`${guild.name}`.underline}`.brightGreen); 
-						}).catch((e)=>{});
+						}).catch((e)=>console.log(e));
 					}catch (e){
 						console.log(String(e).grey)
 					}
@@ -165,14 +144,13 @@ module.exports = (client) => {
 			}
 		})
 		//DISABLE WHEN USING GLOBAL!
-		client.on("guildCreate", async (guild) => {
+		client.on("guildCreate", (guild) => {
 			try{
 				if(!config.loadSlashsGlobal){
-					await guild.commands.set([]).catch((e)=>{});
 					guild.commands.set(allCommands)
 						.then(slashCommandsData => {
 							console.log(`${slashCommandsData.size} slashCommands ${`(With ${slashCommandsData.map(d => d.options).flat().length} Subcommands)`.green} Loaded for: ${`${guild.name}`.underline}`.brightGreen); 
-						}).catch((e)=>{});
+						}).catch((e)=>console.log(e));
 				}
 			}catch (e){
 				console.log(String(e).grey)
